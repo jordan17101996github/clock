@@ -5,6 +5,8 @@
 
 Done on Processing
 
+Methods of the clock design:
+
 PFont font;
 PFont zFont;
 PFont digiFont;
