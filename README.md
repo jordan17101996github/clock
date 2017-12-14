@@ -99,4 +99,5 @@ ellipse(150, 50, 30, 30);  // Draw gray ellipse using CENTER mode
   }
 
 ![](https://github.com/jordan17101996github/clock/blob/master/Screen%20Shot%202017-12-14%20at%2011.32.06.png)
-Solve the problem of the code
+Solve the problem of the code. I need to add another fill in different numbers to make the digits more visible.
+![](https://github.com/jordan17101996github/clock/blob/master/Screen%20Shot%202017-12-14%20at%2011.31.48.png)
