@@ -1,0 +1,88 @@
+void setup() {
+  size(400, 400);
+  rectMode(CENTER);
+}
+
+void secondsPart() {
+// SECONDS
+  fill(0, 0, 9, 120);
+  pushMatrix();
+  rotate(radians(
+              map(second(), 0, 60, 0, 360)
+  ));
+  translate(0, -100);
+  rect(0, 0, 10, 150);
+  popMatrix();
+  }
+
+void minutesPart() {
+  // MINUTES
+   fill(0, 100, 0, 120);
+   pushMatrix();
+  rotate(radians(
+                map(minute() + second() / 60.0, 0, 60, 0, 360)
+  ));
+  translate(0, -100);
+  rect(0, 0, 10, 150);
+  popMatrix();
+  }
+  
+   void hoursPart() {
+  // HOURS
+   fill(189, 9, 19, 12);
+   pushMatrix();
+  rotate(radians(
+                map(hour() % 12 + minute() / 60.0, 0, 12, 0, 360)
+  ));
+  translate(0, -100);
+  rect(0, 0, 10, 150);
+  popMatrix(); 
+   }
+  void millisPart() {
+  // MILLIS
+  fill(200, 119, 19, 122);
+  pushMatrix();
+  rotate(radians(
+               map(millis(), 0, 1000, 0, 360)
+));
+translate(0, -100);
+rect(0, 0, 11, 160);
+popMatrix();
+  }
+  
+void drawClockFace() {
+fill(24, 12);
+stroke(0);
+ellipse(0, 0, 390, 390);
+
+fill(0, 150);
+//ellipse(0, 0, 30, 30);
+for (int i = 0; i < 12; i++) {
+pushMatrix();
+rotate(radians(i * 30));
+translate(0, -180);
+ellipse(0, 0, 10, 10);
+//UNDO translate, UNDO rotate:
+popMatrix();
+}
+
+for (int i = 0; i < 60; i++) {
+pushMatrix();
+rotate(radians(i * 6));
+translate(0, -180);
+ellipse(0, 0, 1, 5);
+//UNDO translate, UNDO rotate:
+popMatrix();
+}
+}
+
+void draw() {
+  background(250);
+  translate(width / 2, height / 2);
+
+  drawClockFace();
+  secondsPart();
+  minutesPart();
+  hoursPart();
+  millisPart();
+}
