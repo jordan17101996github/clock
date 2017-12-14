@@ -1,0 +1,17 @@
+void setup() {
+size (200,100);
+background(122, 44, 23);
+
+
+}
+
+void draw() { 
+ background(120,100,20);
+ 
+ int s = second(); 
+ int m = minute(); 
+ int h = hour(); 
+ 
+ fill(123, 234, 223);
+ text(h+":"+m+":"+s, 15, 50);
+} 
