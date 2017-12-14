@@ -1,3 +1,6 @@
+
+![](https://github.com/jordan17101996github/clock/blob/master/Screen%20Shot%202017-10-16%20at%2011.33.53.png)
+
 void setup() {
   size(400, 400);
   rectMode(CENTER);
