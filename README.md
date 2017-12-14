@@ -5,6 +5,10 @@
 
 Done on Processing
 
+I attempted to make face clock with the flashing circles for the eyes, but it was difficult to succeed this.
+
+
+
 Methods of the clock design:
 
 PFont font;
