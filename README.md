@@ -3,6 +3,8 @@
 
 ![](https://github.com/jordan17101996github/clock/blob/master/Screen%20Shot%202017-12-11%20at%2012.08.42.png)
 
+![](https://github.com/jordan17101996github/clock/blob/master/Screen%20Shot%202017-12-14%20at%2011.32.06.png)
+
 Done on Processing
 
 I attempted to make face clock with the flashing circles for the eyes, but it was difficult to succeed this.
