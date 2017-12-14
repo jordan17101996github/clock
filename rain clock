@@ -1,0 +1,128 @@
+
+
+Rain
+
+////Purple Rain
+//// (138, 43, 225)
+//// 230, 233, 44) // background
+
+//Drop [] drops = new Drop[500];
+
+//void setup() {
+//size(100, 100);
+//  for (int i = 0; i < drops.length; i++) {
+//  drops[i] = new Drop();
+
+//}
+//}
+
+
+Clock
+
+//void draw() {
+//  background(230, 120, 50);
+//for (int i = 0; i < drops.length; i++) {
+//  drops[i].fall();
+//  drops[i].show();
+//}
+//}
+
+
+PFont font;
+PFont zFont;
+PFont digiFont;
+String theText = ":";
+Drop [] drops = new Drop[500];
+
+void setup() {
+//size(200, 200);
+font = loadFont("SansSerif-48.vlw");
+zFont = loadFont("Zapfino-48.vlw");
+digiFont = loadFont ("DSEG14Classic-Bold-96.vlw");
+for (int i = 0; i < drops.length; i++) {
+  drops[i] = new Drop();
+}
+}
+
+void drawTime() {
+ theText = "";
+ theText = theText + day();
+ 
+for (int i = 0; i < drops.length; i++) {
+  drops[i].fall();
+  drops[i].show();
+  
+  textFont(digiFont, 48);
+  textAlign(CENTER);
+  fill(100, 11, 20);
+  text("88:88:88", width / 2, height / 2 + 115);
+  text("XX:XX:XX", width / 2, height / 2 + 15);
+  
+    String theText = "";
+  
+  theText = theText + hour();
+  theText = theText + ":";
+  if (minute() < 10) {theText = theText + "0";}
+  theText = theText + minute();
+  theText = theText + ":";
+  if (second() < 10) { theText = theText + "0"; }
+  theText = theText + second();
+  
+  
+  
+  text(theText, width / 2, height / 2 + 45);
+  
+  fill(0, 100, 90);
+  if (millis() % 1000 > 500) {
+  text("  :  :  ", width / 2, height / 2 + 45);
+  }
+}
+}
+
+void drawDate() {
+  textFont(digiFont, 64);
+  fill (13, 234, 28);
+  text(day() + "_" + month() + "_" + year(),
+  width / 2, height / 2 + 50);
+}
+
+void draw() {
+  background(0, 58, 0);
+  textAlign(CENTER);
+  
+  //stroke(0, 50);
+  //line(0, hheight / 2, width, height / 2);
+  //line(width / 2, 0, width / 2, height);
+
+  if (mousePressed) {
+    drawDate();
+  } else {
+  drawTime();
+}
+}
+
+
+Drops
+
+class Drop {
+  float x = random(width);
+  float y = random(-200,-100);
+  float yspeed = random(4, 10);
+  float len = random(10, 20);
+  
+  void fall() {
+    y = y + yspeed;
+    
+    if (y > height) {
+      y = random(-200,-100);
+    }
+  }
+  
+  void show() {
+    stroke(138, 43, 225);
+    line(x, y, x,y+len);
+    
+  }
+  
+  
+}
